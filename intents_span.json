@@ -1,0 +1,84 @@
+{
+  "intents": [
+    {
+      "intent": "saludo",
+      "patterns": [
+        "Hola", "Hola, ¿cómo estás?", "Buenos días", "Buenas tardes",
+        "Hola", "Hola", "Hola, ¿cómo estás?", "Buenos días", "Buenas tardes",
+        "HOLA", "HOLA", "HOLA, ¿CÓMO ESTÁS?", "BUENOS DÍAS", "BUENAS TARDES"
+      ],
+      "responses": ["¡Hola! ¿Cómo puedo ayudarte?", "¡Hola! ¿En qué puedo ser útil?", "¡Hola, ¿cómo estás? ¿En qué puedo ayudarte?"],
+      "image": "network-image.png"
+    },
+    {
+      "intent": "despedida",
+      "patterns": [
+        "Adiós", "Nos vemos luego", "Adiós", "Hasta pronto",
+        "Adiós", "Nos vemos luego", "Adiós", "Hasta pronto",
+        "ADIÓS", "NOS VEMOS LUEGO", "ADIÓS", "HASTA PRONTO"
+      ],
+      "responses": ["¡Adiós! ¡Nos vemos luego!", "¡Adiós! ¡Vuelve pronto!"]
+    },
+    {
+      "intent": "ayuda",
+      "patterns": [
+        "Necesito ayuda", "Ayúdame", "¿Puedes ayudarme?", "¿Cómo funciona?",
+        "Necesito ayuda", "Ayúdame", "¿Puedes ayudarme?", "¿Cómo funciona?",
+        "NECESITO AYUDA", "AYÚDAME", "¿PUEDES AYUDARME?", "¿CÓMO FUNCIONA?"
+      ],
+      "responses": ["¡Claro! ¿Qué necesitas saber?", "¿Cómo puedo ayudarte?", "¡Estoy aquí para ayudar!"]
+    },
+    {
+      "intent": "problema_sistema",
+      "patterns": [
+        "El sistema no funciona", "El programa se colapsó", "No puedo abrir el sistema", "Error al iniciar el software",
+        "El sistema no funciona", "El programa se colapsó", "No puedo abrir el sistema", "Error al iniciar el software",
+        "EL SISTEMA NO FUNCIONA", "EL PROGRAMA SE COLAPSÓ", "NO PUEDO ABRIR EL SISTEMA", "ERROR AL INICIAR EL SOFTWARE"
+      ],
+      "responses": [
+        "¿Puedes describir el error que aparece?", 
+        "Verifica si el sistema está actualizado o reinicia el ordenador", 
+        "Intenta reiniciar el sistema y avísame si el problema persiste."
+      ]
+    },
+    {
+      "intent": "problema_conexion_internet",
+      "patterns": [
+        "Internet va muy lento", "No puedo conectarme a Internet", "Se cayó la conexión", "Problema con Internet",
+        "Internet va muy lento", "No puedo conectarme a Internet", "Se cayó la conexión", "Problema con Internet",
+        "INTERNET VA MUY LENTO", "NO PUEDO CONECTARME A INTERNET", "SE CAYÓ LA CONEXIÓN", "PROBLEMA CON INTERNET"
+      ],
+      "responses": [
+        "Verifica si el cable de red está correctamente conectado o reinicia el router.", 
+        "Intenta desconectar y volver a conectar tu red Wi-Fi.", 
+        "El problema puede estar relacionado con tu proveedor de Internet. Intenta reiniciar el módem."
+      ]
+    },
+    {
+      "intent": "error_impresora",
+      "patterns": [
+        "La impresora no funciona", "No puedo imprimir", "La impresora está desconectada", "Error en la impresora",
+        "La impresora no funciona", "No puedo imprimir", "La impresora está desconectada", "Error en la impresora",
+        "LA IMPRESORA NO FUNCIONA", "NO PUEDO IMPRIMIR", "LA IMPRESORA ESTÁ DESCONECTADA", "ERROR EN LA IMPRESORA"
+      ],
+      "responses": [
+        "Verifica si la impresora está encendida y conectada correctamente a la computadora.", 
+        "Intenta reiniciar tanto la impresora como la computadora.", 
+        "Revisa si hay papel atascado en la impresora o si la cola de impresión está bloqueada."
+      ]
+    },
+    {
+      "intent": "problema_computadora_lenta",
+      "patterns": [
+        "La computadora está muy lenta", "La PC está congelada", "La computadora no responde", "La computadora está muy lenta",
+        "La computadora está muy lenta", "La PC está congelada", "La computadora no responde", "La computadora está muy lenta",
+        "LA COMPUTADORA ESTÁ MUY LENTA", "LA PC ESTÁ CONGELADA", "LA COMPUTADORA NO RESPONDE", "LA COMPUTADORA ESTÁ MUY LENTA"
+      ],
+      "responses": [
+        "Intenta reiniciar la computadora y cerrar los programas innecesarios.", 
+        "Verifica si tienes suficiente espacio en el disco o realiza una limpieza de archivos temporales.", 
+        "Es posible que necesites actualizar el sistema o agregar más RAM."
+      ]
+    }
+  ]
+}

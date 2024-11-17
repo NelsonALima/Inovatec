@@ -1,0 +1,179 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #141313;
+  background-image: url('Techbot.png'); /* Adicione sua imagem aqui */  
+  background-position: center 100px; /* Centraliza a imagem */
+  background-size: 500px 500px;
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+}
+
+/* Barra de Menu Principal */
+.menu-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  overflow-x: hidden; /* Esconde o conteúdo que ultrapassa a largura */
+}
+
+.menu-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px; /* Ajuste o padding para aumentar o tamanho do botão */
+  font-size: 13px; /* Ajuste o tamanho da fonte */
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100px; /* Defina a largura do botão se quiser um tamanho fixo */
+  height: 30px; /* Defina a altura do botão, se necessário */
+}
+
+.menu-btn:hover {
+  background-color: #45a049;
+}
+
+/* Barra de Idiomas (sempre visível) */
+.language-bar {
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
+  position: absolute; /* Ou fixed, dependendo do comportamento desejado */
+  left: 1400px; /* Alinha à esquerda da tela */
+  max-width: 100vw; /* Limita a largura ao tamanho da tela */
+  overflow-x: auto; /* Permite rolar horizontalmente se houver muitos itens */
+}
+
+.language-bar img {
+  width: 30px; /* Tamanho das bandeiras */
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+
+
+.chat-icon {
+  position: fixed;
+  bottom: 150px;
+  right: 70px;
+  transform: translateX(0);
+  cursor: pointer;
+  width: 150px;
+  height: 150px;
+  background-color: #4CAF50;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #fff;
+  overflow: hidden;
+}
+
+.chat-window {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 500px;
+  background-color: #fff;  
+  border-radius: 10px;
+  display: none; /* Inicialmente escondido */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0.8;  /* 0.8 é a transparência, 0 seria totalmente transparente */
+}
+
+.chat-header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 10px;  /* Arredonda o canto superior esquerdo */
+  border-top-right-radius: 10px; /* Arredonda o canto superior direito */
+}
+
+.chat-messages {
+  padding: 10px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.chat-input {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Estilo para as mensagens do usuário */
+.user-message {
+  color: rgb(11, 0, 0);
+  padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  max-width: 70%;
+  align-self: flex-start;  /* Faz com que as mensagens do usuário fiquem à esquerda */
+  word-wrap: break-word;
+  border: 2px solid #2206f3;  /* Contorno azul */
+  background-color: transparent;  /* Fundo transparente */
+}
+
+/* Estilo para as mensagens do bot */
+.bot-message {
+  color: #000000;
+  padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  max-width: 70%;
+  align-self: flex-end;  /* Faz com que as mensagens do bot fiquem à direita */
+  word-wrap: break-word;
+  border: 2px solid #27d81a;  /* Contorno verde */
+  background-color: transparent;  /* Fundo transparente */
+}
+
+.bot-image {
+  max-width: 100px; /* Ajuste o tamanho da imagem */
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+textarea {
+  width: 75%;
+  height: 50px;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 20%;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.minimize-btn {
+  background-color: transparent;
+  border: 2px solid #ffffff; /* Adiciona uma borda verde de 2px */
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px 10px; /* Ajuste o preenchimento para dar espaço ao redor do ícone */
+  border-radius: 5px; /* Torna a borda arredondada */
+}

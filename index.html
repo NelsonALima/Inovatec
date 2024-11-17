@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techbot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Barra de Menu Principal -->
+    <div class="menu-bar">
+        <button class="menu-btn">Menu</button>
+        <div class="language-bar">
+            <img src="brazil-flag.png" alt="Português" onclick="changeLanguage('pt')" title="Português">
+            <img src="usa-flag.png" alt="English" onclick="changeLanguage('en')" title="English">
+            <img src="spain-flag.png" alt="Español" onclick="changeLanguage('es')" title="Español">
+        </div>
+    </div>
+
+    <!-- Ícone do Chatbot -->
+    <div id="chat-icon" class="chat-icon" onclick="toggleChatWindow()">
+        <img src="techbot-icon.png" alt="Techbot Icon">
+    </div>
+
+    <!-- Janela do Chatbot -->
+    <div id="chat-window" class="chat-window">
+        <div class="chat-header">
+            <span id="chatbot-name">Techbot</span>
+            <button onclick="minimizeChat()" class="minimize-btn">-</button>
+        </div>
+        <div id="chat-messages" class="chat-messages"></div>
+        <div class="chat-input">
+            <textarea id="user-input" placeholder="Digite sua mensagem..."></textarea>
+            <button id="send-button" onclick="sendMessage()">Enviar</button>
+        </div>
+    </div>
+
+    <!-- Referência ao arquivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>
