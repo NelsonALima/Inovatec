@@ -1,179 +1,373 @@
+/* Corpo da página */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #141313;
-  background-image: url('Techbot.png'); /* Adicione sua imagem aqui */  
-  background-position: center 100px; /* Centraliza a imagem */
-  background-size: 500px 500px;
-  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  font-family: Arial, sans-serif; /* Define a fonte da página */
+  background-color: #141313; /* Cor de fundo escura */
+  background-image: url('Techbot.png'); /* Imagem de fundo */
+  background-position: center 100px; /* Posiciona a imagem no centro horizontal e 100px para baixo */
+  background-size: 500px 500px; /* Define o tamanho da imagem de fundo */
+  background-repeat: no-repeat; /* Impede a repetição da imagem de fundo */
+  
 }
 
 /* Barra de Menu Principal */
 .menu-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #333;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-  overflow-x: hidden; /* Esconde o conteúdo que ultrapassa a largura */
+  position: relative; 
+  top: 0; /* Fixa a barra no topo */
+  left: 0; /* Fixa a barra à esquerda */
+  width: 98%; /* Barra ocupa toda a largura da página */
+  background-color: #333; /* Cor de fundo da barra */
+  padding: 10px; /* Espaçamento interno */
+  display: flex; /* Usado para distribuir os itens da barra */
+  justify-content: space-between; /* Espalha os itens entre as extremidades */
+  align-items: center; /* Centraliza os itens verticalmente */
+  z-index: 1000; /* Garante que a barra ficará por cima de outros elementos */
+  overflow-x: hidden; /* Oculta o conteúdo que ultrapassa a largura da barra */  
+  border-radius: 5px;  
 }
 
+/* Botões do Menu */
 .menu-btn {
+  position: relative; 
+  background-color: #4CAF50; /* Cor de fundo do botão */
+  color: white; /* Cor do texto do botão */
+  border: none; /* Remove a borda do botão */
+  font-size: 15px; /* Tamanho da fonte do botão */
+  cursor: pointer; /* Mostra o cursor de mão ao passar sobre o botão */
+  border-radius: 5px; /* Arredonda as bordas do botão */
+  width: 100px; /* Define uma largura fixa para o botão */
+  height: 30px; /* Define uma altura fixa para o botão */  
+
+  display: flex; /* Define flexbox */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  text-align: center; /* Garante que o texto esteja alinhado */
+}
+
+/* Efeito de hover (passar o mouse sobre o botão) */
+.menu-btn:hover {
+  background-color: #83be86; /* Muda a cor de fundo quando passa o mouse sobre o botão */
+}
+
+.submenu {
+  display: none; /* Inicialmente escondido */
+  position: absolute;
+  top: 60px; /* Coloca o submenu logo abaixo da barra de menu */
+  left: 10px;
   background-color: #4CAF50;
+  padding: 0px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  max-height: 200px; /* Limita a altura do submenu */
+  overflow-y: auto; /* Barra de rolagem se o conteúdo exceder a altura */
+  width: 150px; /* Define uma largura para o submenu */
+}
+
+.submenu ul {
+  list-style-type: none; /* Remove os pontos de marcador */
+  padding: 0; /* Remove o preenchimento da lista */
+  margin: 0; /* Remove a margem da lista */
+}
+
+.submenu a {
+  display: block; /* Faz cada item ocupar uma linha inteira */
+  color: white;
+  padding: 12px 16px; /* Espaçamento interno */
+  text-decoration: none;
+  background-color: #4CAF50; /* Cor de fundo do botão */  
+  border: 2px solid #ddd; /* Borda do botão */
+  margin-bottom: 0px; /* Espaçamento entre os botões */
+  border-radius: 5px; /* Bordas arredondadas */
+  text-align: center; /* Centraliza o texto */
+  cursor: pointer; /* Aparece como um botão interativo */
+}
+
+.submenu a:hover {
+  background-color: #3e8e41; /* Altere a cor de fundo ao passar o mouse */
+  color: white; /* Cor do texto ao passar o mouse */
+  border-color: #4CAF50; /* Borda também muda com o hover */
+}
+
+.submenu a:active {
+  background-color: #366e36; /* Altera a cor quando o botão for pressionado */
+}
+
+.submenu.active {
+  display: block; /* Garante que o submenu seja exibido */
+}
+
+/* Estilo da tela de histórico */
+#history-screen {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 500px;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd; /* Borda simples */
+  border-radius: 8px; /* Cantos arredondados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  z-index: 1000; /* Garantir que fique sobre outros elementos */
+  overflow-y: auto; /* Permite rolagem caso haja muitas mensagens */
+}
+
+/* Título do histórico */
+#history-screen h2 {
+  font-size: 1.5em;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Estilo da lista de histórico */
+#history-list {
+  max-height: 300px;
+  overflow-y: auto; /* Adiciona rolagem quando necessário */
+}
+
+/* Estilo de cada item no histórico */
+.history-item {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #f0f0f0; /* Borda leve */
+  border-radius: 5px;
+  background-color: #fafafa; /* Fundo claro */
+}
+
+/* Estilo para o botão de fechar */
+#history-screen button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
   color: white;
   border: none;
-  padding: 10px 20px; /* Ajuste o padding para aumentar o tamanho do botão */
-  font-size: 13px; /* Ajuste o tamanho da fonte */
-  cursor: pointer;
   border-radius: 5px;
-  width: 100px; /* Defina a largura do botão se quiser um tamanho fixo */
-  height: 30px; /* Defina a altura do botão, se necessário */
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
-.menu-btn:hover {
-  background-color: #45a049;
+#history-screen button:hover {
+  background-color: #0056b3;
 }
+
 
 /* Barra de Idiomas (sempre visível) */
 .language-bar {
-  display: flex;
-  gap: 10px;
-  margin-left: 20px;
-  position: absolute; /* Ou fixed, dependendo do comportamento desejado */
-  left: 1400px; /* Alinha à esquerda da tela */
-  max-width: 100vw; /* Limita a largura ao tamanho da tela */
-  overflow-x: auto; /* Permite rolar horizontalmente se houver muitos itens */
+  display: flex; /* Disposição dos itens na barra de idiomas */
+  gap: 10px; /* Espaço entre os itens */
+  margin-left: 20px; /* Margem à esquerda */
+  position: absolute; /* Fixa a posição da barra */
+  left: 1350px; /* Coloca a barra 1400px à esquerda */
+  max-width: 100vw; /* Limita a largura à largura da tela */
+  overflow-x: auto; /* Permite rolagem horizontal se houver muitos itens */
 }
 
+/* Imagem das bandeiras na barra de idiomas */
 .language-bar img {
   width: 30px; /* Tamanho das bandeiras */
-  cursor: pointer;
-  border-radius: 5px;
+  cursor: pointer; /* Cursor de mão ao passar sobre as bandeiras */
+  border-radius: 5px; /* Bordas arredondadas das imagens */
 }
 
-
-
-
+/* Ícone do Chat */
 .chat-icon {
-  position: fixed;
-  bottom: 150px;
-  right: 70px;
-  transform: translateX(0);
-  cursor: pointer;
-  width: 150px;
-  height: 150px;
-  background-color: #4CAF50;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 3px solid #fff;
-  overflow: hidden;
+  position: fixed; /* Fixa o ícone do chat na tela */
+  bottom: 150px; /* Distância do fundo da tela */
+  right: 70px; /* Distância da borda direita da tela */
+  transform: translateX(0); /* Mantém o ícone no mesmo lugar horizontalmente */
+  cursor: pointer; /* Mostra o cursor de mão ao passar sobre o ícone */
+  width: 70px; /* Largura do ícone */
+  height: 70px; /* Altura do ícone */
+  background-color: #171717; /* Cor de fundo do ícone */
+  border-radius: 50%; /* Torna o ícone redondo */
+  display: flex; /* Flexbox para centralizar o conteúdo */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+  border: 3px solid #fff; /* Borda branca ao redor do ícone */
+  overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse os limites do ícone */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adiciona sombra ao botão */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Animações suaves */
+  animation: pulse 2s infinite;
+  background: linear-gradient(135deg, #4CAF50, #34eb83); /* Gradiente de verde */
 }
 
+@keyframes pulse {
+  0% {
+    box-shadow: 0px 0px 0px 0px rgba(23, 23, 23, 0.4);
+  }
+  50% {
+    box-shadow: 0px 0px 15px 5px rgba(23, 23, 23, 0.1);
+  }
+  100% {
+    box-shadow: 0px 0px 0px 0px rgba(23, 23, 23, 0.4);
+  }
+}
+
+.chat-icon:active {
+  transform: scale(0.9); /* Reduz o botão ligeiramente */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Diminui a sombra */
+}
+
+.chat-icon:hover {
+  transform: scale(1.8); /* Aumenta o botão ao passar o mouse */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Aumenta a sombra no hover */
+}
+
+/* Janela do Chat */
 .chat-window {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 700px;
-  height: 500px;
-  background-color: #fff;  
-  border-radius: 10px;
-  display: none; /* Inicialmente escondido */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  flex-direction: column;
-  justify-content: space-between;
-  opacity: 0.8;  /* 0.8 é a transparência, 0 seria totalmente transparente */
+  transition: all 0.3s ease-in-out;
+  position: fixed; /* Fixa a janela do chat na tela */
+  bottom: 20px; /* Distância do fundo da tela */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translateX(-50%); /* Ajusta a posição para centralizar exatamente */
+  width: 700px; /* Largura da janela */
+  height: 500px; /* Altura da janela */
+  background-color: #fff;  /* Cor de fundo da janela */
+  border-radius: 10px; /* Bordas arredondadas */
+  display: none; /* Inicialmente a janela do chat é escondida */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra suave à janela */
+  flex-direction: column; /* Organiza o conteúdo dentro da janela */
+  justify-content: space-between; /* Espaça os elementos dentro da janela */
+  opacity: 0.9; /* Define a transparência da janela */  
 }
 
+/* Cabeçalho da janela do chat */
 .chat-header {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top-left-radius: 10px;  /* Arredonda o canto superior esquerdo */
+  display: flex; /* Flexbox para organizar o conteúdo no cabeçalho */
+  justify-content: space-between; /* Distribui os itens entre as extremidades */
+  align-items: center; /* Centraliza os itens verticalmente */
+  background-color: #535553; /* Cor de fundo do cabeçalho */
+  color: white; /* Cor do texto do cabeçalho */
+  padding: 10px; /* Espaçamento interno */
+  font-weight: bold; /* Deixa o texto em negrito */
+  border-top-left-radius: 10px; /* Arredonda o canto superior esquerdo */
   border-top-right-radius: 10px; /* Arredonda o canto superior direito */
 }
 
-.chat-messages {
-  padding: 10px;
-  overflow-y: auto;
-  flex-grow: 1;
+/* Lado esquerdo do cabeçalho (ícone e nome do chatbot) */
+.chat-header-left {
+  display: flex; /* Alinha o ícone e o nome do chatbot lado a lado */
+  align-items: center; /* Centraliza verticalmente */
 }
 
+/* Ícone do chatbot no cabeçalho */
+.chat-header-icon {
+  width: 30px; /* Tamanho do ícone */
+  height: 30px; /* Tamanho do ícone */
+  border-radius: 50%; /* Torna o ícone redondo */
+  margin-right: 10px; /* Espaço à direita do ícone */
+}
+
+/* Nome do chatbot */
+#chatbot-name {
+  font-size: 18px; /* Tamanho da fonte */
+  margin-left: 10px; /* Espaço à esquerda do nome */
+}
+
+/* Botão para minimizar a janela do chat */
+.minimize-btn {
+  background-color: transparent; /* Fundo transparente */
+  border: 2px solid #ffffff; /* Borda branca */
+  color: white; /* Cor do texto */
+  font-size: 16px; /* Tamanho da fonte */
+  cursor: pointer; /* Cursor de mão ao passar sobre o botão */
+  padding: 3px 6px; /* Espaçamento interno */
+  border-radius: 5px; /* Arredonda as bordas do botão */
+  width: 40px; /* Largura fixa */
+  height: 30px; /* Altura fixa */
+}
+
+/* Área das mensagens do chat */
+.chat-messages {
+  padding: 10px; /* Espaçamento interno */
+  overflow-y: auto; /* Permite rolagem vertical */
+  flex-grow: 1; /* Faz a área crescer para ocupar o espaço disponível */
+}
+
+/* Área de entrada de texto */
 .chat-input {
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
+  padding: 10px; /* Espaçamento interno */
+  display: flex; /* Flexbox para alinhar os elementos */
+  justify-content: space-between; /* Espaça os elementos entre si */
+}
+
+.chat-input textarea {
+  width: 100%; /* Ocupa toda a largura disponível */
+  height: 50px; /* Define a altura da área de digitação */
+  padding: 10px; /* Espaçamento interno */
+  font-size: 16px; /* Tamanho da fonte */
+  border-radius: 5px; /* Bordas arredondadas */
+}
+
+/* Estilo para o ícone circular */
+.message-icon {
+  width: 30px; /* Tamanho do ícone */
+  height: 30px; /* Tamanho do ícone */
+  border-radius: 50%; /* Torna o ícone circular */
+  border: 2px solid #000000;
+  background-color: #f0f0f0; /* Cor de fundo do ícone */
+  display: inline-block; /* Para que o ícone fique dentro da mensagem */
+  margin-right: 5px; /* Espaçamento entre o ícone e o texto */
+  background-size: cover; /* Para a imagem cobrir totalmente o círculo */
+  background-position: center; /* Para centralizar a imagem no círculo */
 }
 
 /* Estilo para as mensagens do usuário */
 .user-message {
-  color: rgb(11, 0, 0);
-  padding: 10px;
-  border-radius: 15px;
-  margin-bottom: 10px;
-  max-width: 70%;
-  align-self: flex-start;  /* Faz com que as mensagens do usuário fiquem à esquerda */
-  word-wrap: break-word;
+  color: rgb(11, 0, 0); /* Cor do texto da mensagem do usuário */
+  padding: 10px; /* Espaçamento interno */
+  border-radius: 15px; /* Bordas arredondadas */
+  margin-bottom: 10px; /* Espaçamento entre as mensagens */
+  max-width: 50%; /* Limita a largura máxima da mensagem */  
+  margin-left: auto;
+  margin-right: 0; /* Empurra a mensagem para a esquerda */
+  word-wrap: break-word; /* Quebra as palavras longas */
   border: 2px solid #2206f3;  /* Contorno azul */
-  background-color: transparent;  /* Fundo transparente */
+  background-color: transparent;  /* Fundo transparente */  
 }
 
 /* Estilo para as mensagens do bot */
 .bot-message {
-  color: #000000;
-  padding: 10px;
-  border-radius: 15px;
-  margin-bottom: 10px;
-  max-width: 70%;
-  align-self: flex-end;  /* Faz com que as mensagens do bot fiquem à direita */
-  word-wrap: break-word;
+  color: #000000; /* Cor do texto da mensagem do bot */
+  padding: 10px; /* Espaçamento interno */
+  border-radius: 15px; /* Bordas arredondadas */
+  margin-bottom: 10px; /* Espaçamento entre as mensagens */
+  max-width: 50%; /* Limita a largura máxima da mensagem */
+  margin-left: 0;
+  margin-right: auto; /* Empurra a mensagem para a esquerda */
+  word-wrap: break-word; /* Quebra as palavras longas */
   border: 2px solid #27d81a;  /* Contorno verde */
   background-color: transparent;  /* Fundo transparente */
 }
 
 .bot-image {
-  max-width: 100px; /* Ajuste o tamanho da imagem */
-  margin-top: 10px;
-  border-radius: 5px;
+  max-width: 200px;  /* Ajuste o valor conforme necessário */
+  max-height: 200px; /* Ajuste o valor conforme necessário */
+  width: auto;       /* Mantém a proporção da imagem */
+  height: auto;      /* Mantém a proporção da imagem */
 }
 
-textarea {
-  width: 75%;
-  height: 50px;
-  border-radius: 5px;
-  padding: 5px;
-  border: 1px solid #ccc;
+
+/* Estilo do botão de envio */
+#send-button {
+  background-color: #2206f3; /* Cor de fundo do botão */
+  color: white; /* Cor do texto */
+  border: none; /* Remove a borda do botão */
+  padding: 10px 20px; /* Espaçamento interno (10px em cima e embaixo, 20px à esquerda e direita) */
+  font-size: 16px; /* Tamanho da fonte */
+  cursor: pointer; /* Altera o cursor para mãozinha quando passa sobre o botão */
+  border-radius: 5px; /* Arredonda as bordas do botão */
+  margin-left: 10px; /* Adiciona um espaço à esquerda do botão */
+  width: 80px; /* Largura fixa do botão */
+  height: 40px; /* Altura fixa do botão */
 }
 
-button {
-  width: 20%;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-.minimize-btn {
-  background-color: transparent;
-  border: 2px solid #ffffff; /* Adiciona uma borda verde de 2px */
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  padding: 5px 10px; /* Ajuste o preenchimento para dar espaço ao redor do ícone */
-  border-radius: 5px; /* Torna a borda arredondada */
+/* Efeito de hover (passar o mouse sobre o botão) */
+#send-button:hover {
+  background-color: rgb(84, 122, 199); /* Muda a cor de fundo para um tom mais escuro de verde ao passar o mouse */
 }

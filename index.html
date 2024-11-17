@@ -4,35 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Techbot</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">   
 </head>
 <body>
 
     <!-- Barra de Menu Principal -->
     <div class="menu-bar">
-        <button class="menu-btn">Menu</button>
+        <button id = "menu-btn"class="menu-btn">Menu</button>
         <div class="language-bar">
-            <img src="brazil-flag.png" alt="Português" onclick="changeLanguage('pt')" title="Português">
-            <img src="usa-flag.png" alt="English" onclick="changeLanguage('en')" title="English">
-            <img src="spain-flag.png" alt="Español" onclick="changeLanguage('es')" title="Español">
-        </div>
+            <img src="brazil-flag.png" alt="Português" onclick="changeLanguage('pt')" title="Português" aria-label="Selecionar idioma Português">
+            <img src="usa-flag.png" alt="English" onclick="changeLanguage('en')" title="English" aria-label="Select language English">
+            <img src="spain-flag.png" alt="Español" onclick="changeLanguage('es')" title="Español" aria-label="Seleccionar idioma Español">
+        </div>        
     </div>
+
+    <!-- Submenu fora da barra de menu -->
+    <div class="submenu" id="submenu">
+        <ul>
+            <li><a href="#">Histórico</a></li>
+            <li><a href="#">Mensagens Salvas</a></li>
+            <li><a href="#">Sobre</a></li>
+        </ul>
+    </div>
+
+        <!-- Tela do Histórico -->
+    <div id="history-screen" style="display:none;">
+        <h2>Histórico de Conversas</h2>
+        <div id="history-list"></div>
+        <button onclick="closeHistory()">Fechar Histórico</button>
+    </div>
+    
 
     <!-- Ícone do Chatbot -->
     <div id="chat-icon" class="chat-icon" onclick="toggleChatWindow()">
-        <img src="techbot-icon.png" alt="Techbot Icon">
-    </div>
+        <i class="fa fa-comments" style="font-size: 24px; color: white;"></i>
+        <!--<img src="techbot-icon.png" alt="Techbot Icon">-->        
+    </div>    
 
     <!-- Janela do Chatbot -->
     <div id="chat-window" class="chat-window">
         <div class="chat-header">
+            <img src="techbot-logo.png" alt="Techbot Logo" class="chat-header-icon">
             <span id="chatbot-name">Techbot</span>
             <button onclick="minimizeChat()" class="minimize-btn">-</button>
         </div>
+
         <div id="chat-messages" class="chat-messages"></div>
+
         <div class="chat-input">
             <textarea id="user-input" placeholder="Digite sua mensagem..."></textarea>
-            <button id="send-button" onclick="sendMessage()">Enviar</button>
+            <button id="send-button" onclick="sendMessage()" aria-label="Enviar mensagem">Enviar</button>
         </div>
     </div>
 
