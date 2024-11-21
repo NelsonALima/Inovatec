@@ -3,82 +3,206 @@
     {
       "intent": "saludo",
       "patterns": [
-        "Hola", "Hola, ¿cómo estás?", "Buenos días", "Buenas tardes",
-        "Hola", "Hola", "Hola, ¿cómo estás?", "Buenos días", "Buenas tardes",
-        "HOLA", "HOLA", "HOLA, ¿CÓMO ESTÁS?", "BUENOS DÍAS", "BUENAS TARDES"
+        "Hola", "Oi", "Buenos días", "Buenas tardes", "Buenas noches", "¿Qué tal?", "¿Cómo va?", 
+        "Hola, ¿todo bien?", "Hola, ¿cómo estás?", "¡Hola, todo bien?", "¡Hola, todo correcto?",
+        "HOLA", "OI", "BUENOS DÍAS", "BUENAS TARDES", "BUENAS NOCHES", "¿QUÉ TAL?", "¿CÓMO VA?"
       ],
-      "responses": ["¡Hola! ¿Cómo puedo ayudarte?", "¡Hola! ¿En qué puedo ser útil?", "¡Hola, ¿cómo estás? ¿En qué puedo ayudarte?"],
-      "image": "network-image.png"
+      "responses": [        
+        "¡Hola! ¿En qué puedo ayudarte?",
+        "¡Oi! ¿Todo bien por ahí? ¿En qué te puedo ayudar?",                       
+        "¡Bienvenido! ¿En qué puedo ayudarte?"
+      ]
     },
     {
       "intent": "despedida",
       "patterns": [
-        "Adiós", "Nos vemos luego", "Adiós", "Hasta pronto",
-        "Adiós", "Nos vemos luego", "Adiós", "Hasta pronto",
-        "ADIÓS", "NOS VEMOS LUEGO", "ADIÓS", "HASTA PRONTO"
+        "Adiós", "Hasta luego", "Hasta más", "Adiós", "Hasta pronto", "Nos vemos", "Nos hablamos luego", "Hasta la próxima",
+        "ADIOS", "HASTA LUEGO", "HASTA MÁS", "ADIOS", "HASTA PRONTO", "NOS VEMOS", "NOS HABLAMOS LUEGO", "HASTA LA PRÓXIMA"
       ],
-      "responses": ["¡Adiós! ¡Nos vemos luego!", "¡Adiós! ¡Vuelve pronto!"]
+      "responses": [        
+        "¡Adiós! ¡Hasta pronto!",
+        "¡Adiós! ¡Vuelve cuando necesites!",
+        "¡Hasta pronto!"
+      ]
     },
     {
       "intent": "ayuda",
       "patterns": [
-        "Necesito ayuda", "Ayúdame", "¿Puedes ayudarme?", "¿Cómo funciona?",
-        "Necesito ayuda", "Ayúdame", "¿Puedes ayudarme?", "¿Cómo funciona?",
-        "NECESITO AYUDA", "AYÚDAME", "¿PUEDES AYUDARME?", "¿CÓMO FUNCIONA?"
+        "Necesito ayuda", "Ayúdame", "¿Puedes ayudarme?", "¿Cómo funciona?", "Ayuda, por favor",
+        "Tengo dudas", "Necesito soporte", "¿Puedes ayudarme con algo?", 
+        "¿Cómo puedo resolver esto?", "No sé qué hacer", "Socorro", "Ayúdame",
+        "NECESITO AYUDA", "AYÚDAME", "¿PUEDES AYUDARME?", "¿CÓMO FUNCIONA?", "AYUDA, POR FAVOR"
       ],
-      "responses": ["¡Claro! ¿Qué necesitas saber?", "¿Cómo puedo ayudarte?", "¡Estoy aquí para ayudar!"]
+      "responses": [
+        "¡Claro! ¿En qué puedo ayudarte?",
+        "Estoy aquí para ayudar. ¿Qué necesitas?",
+        "¿Cómo puedo ser útil?"
+      ]
     },
     {
       "intent": "problema_sistema",
       "patterns": [
-        "El sistema no funciona", "El programa se colapsó", "No puedo abrir el sistema", "Error al iniciar el software",
-        "El sistema no funciona", "El programa se colapsó", "No puedo abrir el sistema", "Error al iniciar el software",
-        "EL SISTEMA NO FUNCIONA", "EL PROGRAMA SE COLAPSÓ", "NO PUEDO ABRIR EL SISTEMA", "ERROR AL INICIAR EL SOFTWARE"
+        "El sistema no funciona", "El programa se colgó", "No puedo abrir el sistema", "Error al iniciar el software",
+        "El sistema dio error", "El sistema se detuvo", "Error inesperado en el programa", "Fallo al iniciar",
+        "El sistema no está funcionando", "No puedo abrir el programa", "Error al cargar el sistema",
+        "ERROR EN EL SISTEMA", "PROBLEMA EN EL PROGRAMA", "FALLO EN EL SISTEMA", "EL SISTEMA SE DETUVO"
       ],
       "responses": [
-        "¿Puedes describir el error que aparece?", 
-        "Verifica si el sistema está actualizado o reinicia el ordenador", 
-        "Intenta reiniciar el sistema y avísame si el problema persiste."
+        "¿Puedes describir el error que aparece?",
+        "Intenta reiniciar el sistema y ver si el problema persiste.",
+        "Verifica si el sistema está actualizado a la última versión."
       ]
     },
     {
       "intent": "problema_conexion_internet",
       "patterns": [
-        "Internet va muy lento", "No puedo conectarme a Internet", "Se cayó la conexión", "Problema con Internet",
-        "Internet va muy lento", "No puedo conectarme a Internet", "Se cayó la conexión", "Problema con Internet",
-        "INTERNET VA MUY LENTO", "NO PUEDO CONECTARME A INTERNET", "SE CAYÓ LA CONEXIÓN", "PROBLEMA CON INTERNET"
+        "No puedo conectarme a internet", "La conexión se cayó", "Problema con internet",
+        "Wi-Fi no funciona", "Problemas con Wi-Fi", "La internet está inestable", "Error en la conexión de red",
+        "No puedo conectar al Wi-Fi", "La conexión se cayó", "Internet fuera de servicio",
+        "PROBLEMA CON INTERNET", "ERROR EN LA CONEXIÓN", "INTERNET NO FUNCIONA", "CONEXIÓN CAÍDA"
       ],
       "responses": [
-        "Verifica si el cable de red está correctamente conectado o reinicia el router.", 
-        "Intenta desconectar y volver a conectar tu red Wi-Fi.", 
-        "El problema puede estar relacionado con tu proveedor de Internet. Intenta reiniciar el módem."
+        "Verifica el router o reinícialo.",
+        "Asegúrate de que los cables estén correctamente conectados.",
+        "Si el problema persiste, contacta con el proveedor de internet."
       ]
     },
     {
       "intent": "error_impresora",
       "patterns": [
-        "La impresora no funciona", "No puedo imprimir", "La impresora está desconectada", "Error en la impresora",
-        "La impresora no funciona", "No puedo imprimir", "La impresora está desconectada", "Error en la impresora",
-        "LA IMPRESORA NO FUNCIONA", "NO PUEDO IMPRIMIR", "LA IMPRESORA ESTÁ DESCONECTADA", "ERROR EN LA IMPRESORA"
+        "La impresora no imprime", "Error en la impresora", "Impresora fuera de línea", "Papel atascado en la impresora",
+        "No puedo imprimir", "Error al enviar archivo a la impresora", "La impresora no enciende",
+        "Problema al configurar la impresora", "La impresora dejó de funcionar",
+        "IMPRESORA ATASCADA", "ERROR EN LA IMPRESORA", "IMPRIMIR NO FUNCIONA", "IMPRESORA FUERA DE LÍNEA"
       ],
       "responses": [
-        "Verifica si la impresora está encendida y conectada correctamente a la computadora.", 
-        "Intenta reiniciar tanto la impresora como la computadora.", 
-        "Revisa si hay papel atascado en la impresora o si la cola de impresión está bloqueada."
+        "Verifica si hay papel o tinta en la impresora.",
+        "Asegúrate de que el cable USB o Wi-Fi esté correctamente conectado.",
+        "Intenta reiniciar la impresora o verificar el controlador instalado."
       ]
     },
     {
-      "intent": "problema_computadora_lenta",
+      "intent": "problema_computador_lento",
       "patterns": [
-        "La computadora está muy lenta", "La PC está congelada", "La computadora no responde", "La computadora está muy lenta",
-        "La computadora está muy lenta", "La PC está congelada", "La computadora no responde", "La computadora está muy lenta",
-        "LA COMPUTADORA ESTÁ MUY LENTA", "LA PC ESTÁ CONGELADA", "LA COMPUTADORA NO RESPONDE", "LA COMPUTADORA ESTÁ MUY LENTA"
+        "El computador está lento", "PC congelado", "El sistema no responde", "Computadora muy lenta",
+        "Error de rendimiento", "Computadora sobrecargada", "Demora en abrir programas",
+        "Computadora congelada", "Problema de rendimiento en el PC", "Mi PC está muy lento",
+        "PC LENTO", "CONGELAMIENTOS", "ERROR DE RENDIMIENTO", "COMPUTADORA CONGELADA"
       ],
       "responses": [
-        "Intenta reiniciar la computadora y cerrar los programas innecesarios.", 
-        "Verifica si tienes suficiente espacio en el disco o realiza una limpieza de archivos temporales.", 
-        "Es posible que necesites actualizar el sistema o agregar más RAM."
+        "Reinicia la computadora y cierra los programas que no estás utilizando.",
+        "Haz una limpieza de archivos temporales en el sistema.",
+        "Verifica si hay actualizaciones disponibles para el sistema."
       ]
-    }
-  ]
-}
+    },  
+
+
+    {
+    
+        "intent": "problema_software",
+        "patterns": [
+          "Error en el programa", "El software no inicia", "Error al abrir el programa", "La aplicación no responde",
+          "Programa bloqueado", "Error en la aplicación", "Problema al ejecutar el software",
+          "El software no funciona", "Error en el sistema del programa",
+          "ERROR EN EL SOFTWARE", "PROGRAMA BLOQUEADO", "FALLO AL INICIAR EL PROGRAMA"
+        ],
+        "responses": [
+          "Verifique si el software está actualizado.",
+          "Intente reinstalar el programa para corregir el error.",
+          "Confirme si el sistema cumple con los requisitos mínimos del programa."
+        ]
+      },
+      {
+        "intent": "problema_email",
+        "patterns": [
+          "Error al enviar el correo", "No puedo acceder a mi correo", "Problema al recibir mensajes", "Correo bloqueado",
+          "Error en la bandeja de entrada", "Problema con el servidor de correo", "No puedo configurar el correo",
+          "El correo no funciona", "Mensaje de error al enviar correo", "Problema con el correo corporativo",
+          "CORREO NO FUNCIONA", "PROBLEMA EN EL CORREO", "ERROR AL CONFIGURAR EL CORREO"
+        ],
+        "responses": [
+          "Verifique la configuración del servidor de correo.",
+          "Intente acceder desde otro dispositivo o navegador.",
+          "Asegúrese de que su conexión a internet sea estable."
+        ]
+      },
+      {
+        "intent": "problema_camera_web",
+        "patterns": [
+          "La cámara no está funcionando", "No puedo acceder a la webcam", "Error en la cámara del portátil",
+          "La webcam no funciona", "La cámara está desconectada", "La cámara no es detectada por el sistema",
+          "Problema al usar la cámara", "Mi cámara no enciende", "Error al acceder a la cámara",
+          "Problema en la cámara del ordenador", "CÁMARA NO FUNCIONA", "WEBCAM CON PROBLEMA"
+        ],
+        "responses": [
+          "Asegúrese de que la cámara esté activada en la configuración del sistema.",
+          "Verifique si el controlador de la cámara está instalado y actualizado.",
+          "Intente desconectar y reconectar la cámara, si es externa."
+        ]
+      },
+      {
+        "intent": "problema_audio",
+        "patterns": [
+          "El sonido no está funcionando", "No puedo escuchar nada", "El audio de mi computadora está en silencio",
+          "Problema con los altavoces", "El micrófono no funciona", "Error en el audio del sistema",
+          "Mi sonido está muy bajo", "Problema al conectar auriculares", "El audio no sale por los altavoces",
+          "SIN SONIDO EN LA PC", "MICRÓFONO NO FUNCIONA", "PROBLEMA EN EL AUDIO"
+        ],
+        "responses": [
+          "Verifique si el volumen está activado y ajustado en el sistema.",
+          "Asegúrese de que los altavoces o auriculares estén conectados correctamente.",
+          "Actualice los controladores de audio para garantizar la compatibilidad."
+        ]
+      },
+      {
+        "intent": "problema_bateria",
+        "patterns": [
+          "La batería no carga", "El portátil se apaga solo", "La batería se descarga rápido",
+          "Error en la carga del portátil", "Mi laptop no carga", "Problema con el cargador del portátil",
+          "La batería no funciona", "El cargador no es detectado", "BATERÍA NO CARGA",
+          "PORTÁTIL APAGÁNDOSE", "PROBLEMA EN LA BATERÍA"
+        ],
+        "responses": [
+          "Asegúrese de que el cargador esté conectado correctamente a la toma de corriente.",
+          "Verifique si hay daños visibles en el cable del cargador.",
+          "Considere reemplazar la batería si está muy desgastada."
+        ]
+      },
+      {
+        "intent": "problema_perifericos",
+        "patterns": [
+          "Mi teclado no funciona", "Error al usar el mouse", "El teclado está bloqueado",
+          "El mouse no responde", "No puedo usar mi periférico", "Problema con el teclado del portátil",
+          "El touchpad no funciona", "Problema al conectar teclado o mouse", "TECLADO BLOQUEADO",
+          "MOUSE NO FUNCIONA", "PROBLEMA CON EL PERIFÉRICO"
+        ],
+        "responses": [
+          "Desconecte y reconecte el periférico, si es externo.",
+          "Verifique si el controlador del dispositivo está instalado correctamente.",
+          "Reinicie la computadora para ver si el problema persiste."
+        ]
+      },
+      {
+        "intent": "limpar_cache_dns",
+        "patterns": [
+            "El sitio no carga"
+        ],
+        "responses": [
+            "Parece que el problema podría estar relacionado con la caché DNS. Esto se puede resolver limpiando la caché.",
+            "Puedes intentar limpiar la caché DNS para resolver el problema. Aquí hay un script que puede ayudar.",
+            "Te recomiendo ejecutar este script para limpiar la caché DNS. Descárgalo y verifica si el problema persiste."
+        ],
+        "file": "limpiar_cache.bat"
+      },
+      {
+        "intent": "problema_rede_local",
+        "patterns": [
+          "Sin conexión"
+        ],
+        "responses": [
+          "Verifique si los cables de la red están conectados."        
+        ],
+        "image": "network-image.png"
+      }
+    ]
+  }

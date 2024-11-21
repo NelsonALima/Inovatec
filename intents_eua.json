@@ -1,162 +1,201 @@
 {
   "intents": [
-    {
-      "intent": "greeting",
-      "patterns": [
-        "Hello", "Hi", "Hi, how are you?", "Good morning", "Good afternoon",
-        "Hello", "Hi", "Hi, how are you?", "Good morning", "Good afternoon",
-        "HELLO", "HI", "HI, HOW ARE YOU?", "GOOD MORNING", "GOOD AFTERNOON"
-      ],
-      "responses": ["Hello! How can I assist you?", "Hi! How can I be helpful?", "Hi, how are you? How can I help?"],
-      "image": "network-image.png"
-    },
-    {
-      "intent": "goodbye",
-      "patterns": [
-        "Bye", "See you later", "Goodbye", "See you soon",
-        "Bye", "See you later", "Goodbye", "See you soon",
-        "BYE", "SEE YOU LATER", "GOODBYE", "SEE YOU SOON"
-      ],
-      "responses": ["Bye! See you later!", "Goodbye! Come back soon!"]
-    },
-    {
-      "intent": "help",
-      "patterns": [
-        "I need help", "Help me", "Can you help me?", "How does it work?",
-        "I need help", "Help me", "Can you help me?", "How does it work?",
-        "I NEED HELP", "HELP ME", "CAN YOU HELP ME?", "HOW DOES IT WORK?"
-      ],
-      "responses": ["Sure! What do you need to know?", "How can I assist you?", "I'm here to help!"]
-    },
-    {
-      "intent": "system_problem",
-      "patterns": [
-        "The system is not working", "The program crashed", "I can't open the system", "Error starting the software",
-        "The system is not working", "The program crashed", "I can't open the system", "Error starting the software",
-        "THE SYSTEM IS NOT WORKING", "THE PROGRAM CRASHED", "I CAN'T OPEN THE SYSTEM", "ERROR STARTING THE SOFTWARE"
-      ],
-      "responses": [
-        "Can you describe the error that appears?", 
-        "Check if the system is up-to-date or restart the computer", 
-        "Try restarting the system and let me know if the problem persists."
-      ]
-    },
-    {
-      "intent": "internet_connection_problem",
-      "patterns": [
-        "The internet is very slow", "I can't connect to the internet", "The connection dropped", "Internet problem",
-        "The internet is very slow", "I can't connect to the internet", "The connection dropped", "Internet problem",
-        "THE INTERNET IS VERY SLOW", "I CAN'T CONNECT TO THE INTERNET", "THE CONNECTION DROPPED", "INTERNET PROBLEM"
-      ],
-      "responses": [
-        "Check if the network cable is connected properly or restart the router.", 
-        "Try disconnecting and reconnecting your Wi-Fi network.", 
-        "The issue may be with your internet provider. Try restarting the modem."
-      ]
-    },
-    {
-      "intent": "printer_error",
-      "patterns": [
-        "The printer is not working", "I can't print", "The printer is offline", "Printer error",
-        "The printer is not working", "I can't print", "The printer is offline", "Printer error",
-        "THE PRINTER IS NOT WORKING", "I CAN'T PRINT", "THE PRINTER IS OFFLINE", "PRINTER ERROR"
-      ],
-      "responses": [
-        "Check if the printer is on and connected properly to the computer.", 
-        "Try restarting both the printer and the computer.", 
-        "Check if there's any paper stuck in the printer or if the print queue is blocked."
-      ]
-    },
-    {
-      "intent": "slow_computer_problem",
-      "patterns": [
-        "The computer is very slow", "The PC is freezing", "The computer is unresponsive", "The computer is very slow",
-        "The computer is very slow", "The PC is freezing", "The computer is unresponsive", "The computer is very slow",
-        "THE COMPUTER IS VERY SLOW", "THE PC IS FREEZING", "THE COMPUTER IS UNRESPONSIVE", "THE COMPUTER IS VERY SLOW"
-      ],
-      "responses": [
-        "Try restarting the computer and closing unnecessary programs.", 
-        "Check if there's enough disk space or perform a cleanup of temporary files.", 
-        "You may need to update the system or increase the RAM."
-      ]
-    },
-    {
-      "intent": "software_problem",
-      "patterns": [
-        "The software won't open", "The program is unresponsive", "Error using the program", "The software froze",
-        "The software won't open", "The program is unresponsive", "Error using the program", "The software froze",
-        "THE SOFTWARE WON'T OPEN", "THE PROGRAM IS UNRESPONSIVE", "ERROR USING THE PROGRAM", "THE SOFTWARE FROZE"
-      ],
-      "responses": [
-        "Try updating the software to the latest version.", 
-        "Try reinstalling the program.", 
-        "Check if your operating system meets the software's minimum requirements."
-      ]
-    },
-    {
-      "intent": "operating_system_error",
-      "patterns": [
-        "Windows error", "Operating system problem", "Blue screen", "Operating system failure",
-        "Windows error", "Operating system problem", "Blue screen", "Operating system failure",
-        "WINDOWS ERROR", "OPERATING SYSTEM PROBLEM", "BLUE SCREEN", "OPERATING SYSTEM FAILURE"
-      ],
-      "responses": [
-        "Check if the operating system is up-to-date.", 
-        "Try restarting the computer or run a disk check for errors.", 
-        "If the error persists, you may need to restore the system to an earlier point."
-      ]
-    },
-    {
-      "intent": "forgot_password",
-      "patterns": [
-        "I forgot my password", "I can't access my account", "Reset password", "I lost my password",
-        "I forgot my password", "I can't access my account", "Reset password", "I lost my password",
-        "I FORGOT MY PASSWORD", "I CAN'T ACCESS MY ACCOUNT", "RESET PASSWORD", "I LOST MY PASSWORD"
-      ],
-      "responses": [
-        "You can try recovering your password via the 'Forgot Password' option.", 
-        "If you forgot your password, contact support to reset it.", 
-        "Try accessing the password recovery page on the website."
-      ]
-    },
-    {
-      "intent": "update_error",
-      "patterns": [
-        "The update failed", "I can't update the software", "Error trying to update", "Update problem",
-        "The update failed", "I can't update the software", "Error trying to update", "Update problem",
-        "THE UPDATE FAILED", "I CAN'T UPDATE THE SOFTWARE", "ERROR TRYING TO UPDATE", "UPDATE PROBLEM"
-      ],
-      "responses": [
-        "Try restarting the computer and check for any pending updates.", 
-        "Check your internet connection and try updating again.", 
-        "If the error persists, you may need to uninstall the update and try again."
-      ]
-    },
-    {
-      "intent": "wifi_password_problem",
-      "patterns": [
-        "I forgot the Wi-Fi password", "I can't connect to Wi-Fi", "Wi-Fi password doesn't work", "Problem connecting to Wi-Fi",
-        "I forgot the Wi-Fi password", "I can't connect to Wi-Fi", "Wi-Fi password doesn't work", "Problem connecting to Wi-Fi",
-        "I FORGOT THE WIFI PASSWORD", "I CAN'T CONNECT TO WIFI", "WIFI PASSWORD DOESN'T WORK", "PROBLEM CONNECTING TO WIFI"
-      ],
-      "responses": [
-        "Check if you are entering the correct password.", 
-        "Try restarting the router and check if the password is correct in the router settings.", 
-        "Contact the network administrator to get the correct password."
-      ]
-    },
-    {
-      "intent": "file_permission_error",
-      "patterns": [
-        "I don't have permission to access the file", "Permission error", "I can't open the file", "Access denied to the file",
-        "I don't have permission to access the file", "Permission error", "I can't open the file", "Access denied to the file",
-        "I DON'T HAVE PERMISSION TO ACCESS THE FILE", "PERMISSION ERROR", "I CAN'T OPEN THE FILE", "ACCESS DENIED TO THE FILE"
-      ],
-      "responses": [
-        "Check if you have the necessary permissions to access the file.", 
-        "Try running the program as administrator.", 
-        "If the issue persists, contact the system administrator."
-      ]
-    }
+  {
+  "intent": "greeting",
+  "patterns": [
+  "Hello", "Hi", "Good morning", "Good afternoon", "Good evening", "Hey there", "How are you?", "How are you?",
+  "Hi, how are you?", "Hello, how are you?", "Hi, how are you?",
+  "HELLO", "HI", "GOOD MORNING", "GOOD AFTERNOON", "GOOD EVENING", "HEY", "YOU ARE YOU OK?", "HOW ARE YOU?"
+  ],
+  "responses": [
+  "Hello! How can I help you?",
+  "Hi! How are you? How can I help you?",
+  "Welcome! How can I help you?" ]
+  },
+  {
+  "intent": "farewell",
+  "patterns": [
+  "Bye", "See you soon", "See you later", "Goodbye", "See you soon", "Talk to you", "See you next time",
+  "BYE", "SEE YOU SOON", "GOODBYE", "SEE YOU SOON", "TALK TO YOU", "WE'LL TALK TO YOU", "SEE YOU NEXT TIME"
+  ],
+  "responses": [
+  "Bye! See you later!",
+  "Goodbye! Come back when you need me!",
+  "See you soon!" ]
+  },
+  {
+  "intent": "help",
+  "patterns": [
+  "I need help", "Help me", "Can you help me?", "How does it work?", "Help, please",
+  "I have questions", "I need support", "Can you help me with something?",
+  "How can I solve this?", "I don't know what to do", "Help", "Help me",
+  "I NEED HELP", "HELP ME", "CAN YOU HELP ME?", "HOW DOES IT WORK?", "HELP, PLEASE"
+  ],
+  "responses": [
+  "Sure! How can I help?",
+  "I'm here to help! What do you need?",
+  "How can I be of assistance?" ]
+  },
+  {
+  "intent": "system_problem",
+  "patterns": [
+  "The system is not working", "The program has crashed", "I can't open the system", "Error starting the software",
+  "The system has failed", "The system has stopped", "Unexpected error in the program", "Failed to start",
+  "The system is not working", "I can't open the program", "Error loading the system",
+  "SYSTEM ERROR", "PROBLEM IN THE PROGRAM", "SYSTEM FAILURE", "THE SYSTEM HAS STOPPED"
+  ],
+  "responses": [
+  "Can you describe the error that is appearing?",
+  "Try restarting the system and see if the problem persists.",
+  "Check if the system is updated to the latest version." ]
+  },
+  {
+  "intent": "internet_connection_problem",
+  "patterns": [
+  "I can't connect to the internet", "The connection is down", "Internet problem",
+  "Wi-Fi not working", "Wi-Fi problems", "The internet is unstable", "Network connection error",
+  "I can't connect to Wi-Fi", "The connection is down", "Internet offline",
+  "INTERNET PROBLEM", "CONNECTION ERROR", "INTERNET NOT WORKING", "CONNECTION IS DOWN"
+  ],
+  "responses": [
+  "Check or restart your router.",
+  "Make sure the cables are connected correctly.",
+  "If the problem persists, contact your internet service provider." ]
+  },
+  {
+  "intent": "printer_error",
+  "patterns": [
+  "Printer won't print", "Printer error", "Printer offline", "Paper jammed in printer",
+  "Can't print", "Error sending file to printer", "Printer won't turn on",
+  "Problem setting up printer", "Printer stopped working",
+  "PRINTER LOCKED", "PRINTER ERROR", "PRINTING DOESN'T WORK", "PRINTER OFFLINE"
+  ],
+  "responses": [
+  "Check if there is paper or ink in the printer.",
+  "Make sure the USB or Wi-Fi cable is connected correctly.",
+  "Try restarting the printer or checking the installed driver." ]
+  },
+  {
+  "intent": "slow_computer_problem",
+  "patterns": [
+  "Computer is slow", "PC freezing", "System is unresponsive", "Computer is very slow",
+  "Performance error", "Computer is overloaded", "It takes a long time to open programs",
+  "Computer is freezing", "PC performance problem", "My PC is very slow",
+  "SLOW PC", "CRASHES", "PERFORMANCE ERROR", "COMPUTER CRASHES"
+  ],
+  "responses": [
+  "Restart your computer and close programs you are not using.",
+  "Clean up temporary system files.",
+  "Check for available system updates." ]
+  },
+  
+  {
+  "intent": "software_problem",
+  "patterns": [
+  "Program error", "Software won't start", "Error opening program", "Application not responding",
+  "Program crashed", "Application error", "Problem running software",
+  "Software not working", "Program system error",
+  "SOFTWARE ERROR", "PROGRAM CRASHED", "PROGRAM FAILS TO START"
+  ],
+  "responses": [
+  "Check if the software is up to date.",
+  "Try reinstalling the program to fix the error.",
+  "Confirm that your system meets the minimum requirements for the program."
   ]
+  },
+  
+  {
+  "intent": "email_problem",
+"patterns": [
+"Error sending email", "I can't access my email", "Problem receiving messages", "Email stuck",
+"Inbox error", "Problem with email server", "I can't set up email",
+"Email not working", "Error message sending email", "Problem with corporate email",
+"EMAIL NOT WORKING", "EMAIL PROBLEM", "ERROR CONFIGURING EMAIL"
+],
+"responses": [
+"Check your email server settings.",
+"Try accessing from another device or browser.",
+"Make sure your internet connection is stable."
+]
+},
+{
+"intent": "web_camera_problem",
+"patterns": [
+"Camera not working", "I can't access the webcam", "Error with laptop camera",
+"Webcam not working", "Camera is disconnected", "Camera is not detected by the system",
+"Problem using the camera", "My camera won't turn on", "Error accessing the camera",
+"Problem with computer camera", "CAMERA NOT WORKING", "WEBCAM WITH PROBLEM"
+],
+"responses": [
+"Make sure the camera is enabled in the system settings.",
+"Check if the camera driver is installed and updated.",
+"Try disconnecting and reconnecting the camera, if it is external."
+]
+},
+{
+"intent": "audio_problem",
+"patterns": [
+"Sound is not working", "I can't hear anything", "My computer audio is muted",
+"Problem with speakers", "Microphone not working", "System audio error",
+"My sound is too low", "Problem connecting headphones ear", "Audio not coming out of speakers",
+"NO SOUND ON PC", "MICROPHONE NOT WORKING", "AUDIO PROBLEM"
+],
+"responses": [
+"Check if the volume is activated and adjusted in the system.",
+"Make sure the speakers or headphones are connected correctly.",
+"Update the audio drivers to ensure compatibility."
+]
+},
+{
+"intent": "battery_problem",
+"patterns": [
+"Battery not charging", "Laptop turns off by itself", "Battery drains quickly",
+"Error charging the laptop", "My laptop won't charge", "Problem with the laptop charger",
+"Battery not working", "Charger not detected", "BATTERY NOT CHARGING",
+"LAPTOP SHUTTING OFF", "BATTERY PROBLEM"
+],
+"responses": [
+"Make sure the charger is connected correctly to the outlet.",
+"Check the charger cable for visible damage.",
+"Consider replacing the battery if it is very worn."
+]
+},
+{
+"intent": "problem_peripherals",
+"patterns": [
+"My keyboard doesn't work", "Error using the mouse", "The keyboard is stuck",
+"The mouse doesn't respond", "I can't use my peripheral", "Problem with the laptop keyboard",
+"The touchpad doesn't work", "Problem connecting keyboard or mouse", "KEYBOARD STUCK",
+"MOUSE DOESN'T WORK", "PROBLEM WITH PERIPHERAL"
+],
+"responses": [
+"Disconnect and reconnect the peripheral, if it is external.",
+"Check if the device driver is installed correctly.",
+"Restart the computer to see if the problem persists."
+]
+},
+{
+"intent": "clear_dns_cache",
+"patterns": [
+"Website not loading"
+],
+"responses": [
+"It looks like the issue may be related to the DNS cache. This can be resolved by clearing the cache.",
+"You can try clearing the DNS cache to resolve the issue. Here is a script that may help.",
+"I recommend running this script to clear the DNS cache. Download it and see if the issue persists."
+],
+"file": "limpa_cache.bat"
+},
+{
+"intent": "problema_rede_local",
+"patterns": [
+"No connection"
+],
+"responses": [
+"Check if the network cables are connected"
+],
+"image": "network-image.png"
+}
+
+]
 }

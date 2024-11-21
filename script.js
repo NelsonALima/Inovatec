@@ -183,6 +183,16 @@ function sendMessage() {
                 responseImage.classList.add('bot-image'); // Classe para estilizar a imagem
                 botMessage.appendChild(responseImage);
             }
+
+            // Exibe o botão de download, se houver um arquivo
+            if (botResponseData.file) {
+                const downloadButton = document.createElement('a');
+                downloadButton.href = botResponseData.file; // Caminho do arquivo
+                downloadButton.download = 'limpa_cache.bat'; // Nome do arquivo ao fazer download
+                downloadButton.textContent = "Download";
+                downloadButton.classList.add('download-button'); // Classe para estilização
+                botMessage.appendChild(downloadButton);
+            }
   
             chatMessages.appendChild(botMessage);
   
@@ -250,32 +260,42 @@ document.querySelector('#submenu ul li:nth-child(1) a').addEventListener('click'
 
 // Função que processa a mensagem do usuário e retorna a resposta do bot
 function getBotResponse(userMessage) {
-  const normalizedMessage = userMessage.toLowerCase(); // Normaliza a mensagem do usuário
+    const normalizedMessage = userMessage.toLowerCase(); // Normaliza a mensagem do usuário
 
-  // Verifica se a mensagem do usuário corresponde a algum padrão nas intenções
-  for (let intent of window.intentsData) {
-      for (let pattern of intent.patterns) {
-          if (normalizedMessage.includes(pattern.toLowerCase())) {
-              // Se encontrar, retorna uma resposta aleatória da intenção correspondente
-              const response = intent.responses[Math.floor(Math.random() * intent.responses.length)];
+    // Verifica se a mensagem do usuário corresponde a algum padrão nas intenções
+    for (let intent of window.intentsData) {
+        for (let pattern of intent.patterns) {
+            if (normalizedMessage.includes(pattern.toLowerCase())) {
+                // Se encontrar, retorna uma resposta aleatória da intenção correspondente
+                const response = intent.responses[Math.floor(Math.random() * intent.responses.length)];
 
-              // Se a intenção tem uma imagem, retorna a imagem junto com a resposta
-              const image = intent.image ? intent.image : null;
+                // Se a intenção tem uma imagem, retorna a imagem junto com a resposta
+                const image = intent.image ? intent.image : null;
 
-              return {
-                  response: response,
-                  image: image
-              };
-          }
-      }
-  }
+                // Verifica se a intenção tem um arquivo associado
+                if (intent.file) {
+                    return {
+                        response: response,
+                        image: image,
+                        file: intent.file // Caminho do arquivo para download
+                    };
+                }
 
-  // Resposta padrão caso não encontre nenhuma intenção
-  return {
-      response: window.defaultResponse || "Desculpe, não entendi. Pode reformular?",
-      image: null
-  };
+                return {
+                    response: response,
+                    image: image
+                };
+            }
+        }
+    }
+
+    // Resposta padrão caso não encontre nenhuma intenção
+    return {
+        response: window.defaultResponse || "Desculpe, não entendi. Pode reformular?",
+        image: null
+    };
 }
+
 
 // Carrega o idioma padrão ao iniciar a página
 document.addEventListener('DOMContentLoaded', () => {

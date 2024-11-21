@@ -3,160 +3,211 @@
     {
       "intent": "saudacao",
       "patterns": [
-        "Olá", "Oi", "Oi, tudo bem?", "Bom dia", "Boa tarde",
-        "Ola", "Oi", "Oi tudo bem?", "Bom dia", "Boa tarde",
-        "OLA", "OI", "OI TUDO BEM?", "BOM DIA", "BOA TARDE"
+        "Olá", "Oi", "Bom dia", "Boa tarde", "Boa noite", "E aí", "Tudo bem?", "Como vai?", 
+        "Oi tudo bem?", "Ola tudo bem?", "Oi, como está?", "Oi tudo certo?",
+        "OLA", "OI", "BOM DIA", "BOA TARDE", "BOA NOITE", "E AI", "TUDO BEM?", "COMO VAI?"
       ],
-      "responses": ["Olá! Como posso ajudar?", "Oi! Como posso ser útil?", "Oi, tudo bem? Em que posso ajudar?"],
-      "image" : "network-image.png"
+      "responses": [        
+        "Olá! Como posso ajudar?",
+        "Oi! Tudo bem por aí? Em que posso te ajudar?",                       
+        "Bem-vindo! Como posso te ajudar?"
+      ]
     },
     {
       "intent": "despedida",
       "patterns": [
-        "Tchau", "Até logo", "Adeus", "Até mais",
-        "Tchau", "Ate logo", "Adeus", "Ate mais",
-        "TCHAU", "ATE LOGO", "ADEUS", "ATE MAIS"
+        "Tchau", "Até logo", "Até mais", "Adeus", "Até breve", "Falou", "A gente se fala", "Até a próxima",
+        "TCHAU", "ATE LOGO", "ATE MAIS", "ADEUS", "ATE BREVE", "FALOU", "A GENTE SE FALA", "ATE A PROXIMA"
       ],
-      "responses": ["Tchau! Até mais!", "Adeus! Volte logo!"]
+      "responses": [        
+        "Tchau! Até mais!",
+        "Adeus! Volte quando precisar!",
+        "Até breve!"
+      ]
     },
     {
       "intent": "ajuda",
       "patterns": [
-        "Preciso de ajuda", "Me ajude", "Pode me ajudar?", "Como funciona?",
-        "Preciso de ajuda", "Me ajude", "Pode me ajudar?", "Como funciona?",
-        "PRECISO DE AJUDA", "ME AJUDE", "PODE ME AJUDAR?", "COMO FUNCIONA?"
+        "Preciso de ajuda", "Me ajude", "Pode me ajudar?", "Como funciona?", "Ajuda, por favor",
+        "Estou com dúvidas", "Preciso de suporte", "Você pode me ajudar com algo?", 
+        "Como posso resolver isso?", "Não sei o que fazer", "Socorro", "Ajude-me",
+        "PRECISO DE AJUDA", "ME AJUDE", "PODE ME AJUDAR?", "COMO FUNCIONA?", "AJUDA, POR FAVOR"
       ],
-      "responses": ["Claro! O que você precisa saber?", "Como posso te ajudar?", "Estou aqui para ajudar!"]
+      "responses": [
+        "Claro! Em que posso ajudar?",
+        "Estou aqui para ajudar! O que você precisa?",
+        "Como posso ser útil?"
+      ]
     },
     {
       "intent": "problema_sistema",
       "patterns": [
         "O sistema não está funcionando", "O programa travou", "Não consigo abrir o sistema", "Erro ao iniciar o software",
-        "O sistema nao esta funcionando", "O programa travou", "Nao consigo abrir o sistema", "Erro ao iniciar o software",
-        "O SISTEMA NAO ESTA FUNCIONANDO", "O PROGRAMA TRAVOU", "NAO CONSIGO ABRIR O SISTEMA", "ERRO AO INICIAR O SOFTWARE"
+        "O sistema deu erro", "O sistema parou", "Erro inesperado no programa", "Falha ao iniciar",
+        "O sistema nao esta funcionando", "Nao consigo abrir o programa", "Erro ao carregar o sistema",
+        "ERRO NO SISTEMA", "PROBLEMA NO PROGRAMA", "FALHA NO SISTEMA", "O SISTEMA PAROU"
       ],
       "responses": [
-        "Você pode descrever o erro que está aparecendo?", 
-        "Verifique se o sistema está atualizado ou reinicie o computador", 
-        "Tente reiniciar o sistema e, se o problema persistir, me avise."
+        "Você pode descrever o erro que está aparecendo?",
+        "Tente reiniciar o sistema e veja se o problema persiste.",
+        "Verifique se o sistema está atualizado para a última versão."
       ]
     },
     {
       "intent": "problema_conexao_internet",
       "patterns": [
-        "A internet está muito lenta", "Não consigo me conectar à internet", "A conexão caiu", "Problema na internet",
-        "A internet esta muito lenta", "Nao consigo me conectar a internet", "A conexao caiu", "Problema na internet",
-        "A INTERNET ESTA MUITO LENTA", "NAO CONSIGO ME CONECTAR A INTERNET", "A CONEXAO CAIU", "PROBLEMA NA INTERNET"
+        "Não consigo me conectar à internet", "A conexão caiu", "Problema na internet",
+        "Wi-Fi não funciona", "Problemas com Wi-Fi", "A internet está instável", "Erro na conexão de rede",
+        "Nao consigo conectar ao Wi-Fi", "A conexao caiu", "Internet offline",
+        "PROBLEMA NA INTERNET", "ERRO NA CONEXAO", "INTERNET NÃO FUNCIONA", "CONEXÃO CAIU"
       ],
       "responses": [
-        "Verifique se o cabo de rede está conectado corretamente ou reinicie o roteador.", 
-        "Tente desconectar e conectar novamente sua rede Wi-Fi.", 
-        "O problema pode estar no seu provedor de internet. Tente reiniciar o modem."
+        "Verifique o roteador ou reinicie-o.",
+        "Certifique-se de que os cabos estão conectados corretamente.",
+        "Se o problema persistir, entre em contato com o provedor de internet."
       ]
     },
     {
       "intent": "erro_impressora",
       "patterns": [
-        "A impressora não está funcionando", "Não consigo imprimir", "A impressora está offline", "Erro na impressora",
-        "A impressora nao esta funcionando", "Nao consigo imprimir", "A impressora esta offline", "Erro na impressora",
-        "A IMPRESSORA NAO ESTA FUNCIONANDO", "NAO CONSIGO IMPRIMIR", "A IMPRESSORA ESTA OFFLINE", "ERRO NA IMPRESSORA"
+        "A impressora não imprime", "Erro na impressora", "Impressora offline", "Papel atolado na impressora",
+        "Não consigo imprimir", "Erro ao enviar arquivo para impressora", "A impressora não liga",
+        "Problema ao configurar a impressora", "A impressora parou de funcionar",
+        "IMPRESSORA TRAVADA", "ERRO NA IMPRESSORA", "IMPRIMIR NÃO FUNCIONA", "IMPRESSORA OFFLINE"
       ],
       "responses": [
-        "Verifique se a impressora está ligada e conectada corretamente ao computador.", 
-        "Tente reiniciar a impressora e o computador.", 
-        "Veja se há algum papel preso na impressora ou se a fila de impressão está bloqueada."
+        "Verifique se há papel ou tinta na impressora.",
+        "Certifique-se de que o cabo USB ou Wi-Fi está conectado corretamente.",
+        "Tente reiniciar a impressora ou verificar o driver instalado."
       ]
     },
     {
       "intent": "problema_computador_lento",
       "patterns": [
-        "O computador está muito lento", "O PC está travando", "O computador não responde", "O computador está muito devagar",
-        "O computador esta muito lento", "O PC esta travando", "O computador nao responde", "O computador esta muito devagar",
-        "O COMPUTADOR ESTA MUITO LENTO", "O PC ESTA TRAVANDO", "O COMPUTADOR NAO RESPONDE", "O COMPUTADOR ESTA MUITO DEVAGAR"
+        "O computador está lento", "PC travando", "O sistema não responde", "Computador muito devagar",
+        "Erro de desempenho", "Computador sobrecarregado", "Demora para abrir programas",
+        "Computador congelando", "Problema de desempenho no PC", "Meu PC está muito devagar",
+        "PC LENTO", "TRAVAMENTOS", "ERRO DE DESEMPENHO", "COMPUTADOR TRAVADO"
       ],
       "responses": [
-        "Tente reiniciar o computador e fechar programas desnecessários.", 
-        "Verifique se o computador tem espaço suficiente no disco rígido ou faça uma limpeza de arquivos temporários.", 
-        "Talvez seja necessário atualizar o sistema ou aumentar a memória RAM."
+        "Reinicie o computador e feche programas que não está utilizando.",
+        "Faça uma limpeza nos arquivos temporários do sistema.",
+        "Verifique se há atualizações disponíveis para o sistema."
       ]
-    },
+    },  
+    
+    
     {
       "intent": "problema_software",
       "patterns": [
-        "O software não está abrindo", "O programa não responde", "Erro ao usar o programa", "O software travou",
-        "O software nao esta abrindo", "O programa nao responde", "Erro ao usar o programa", "O software travou",
-        "O SOFTWARE NAO ESTA ABRINDO", "O PROGRAMA NAO RESPONDE", "ERRO AO USAR O PROGRAMA", "O SOFTWARE TRAVOU"
+        "Erro no programa", "O software não inicia", "Erro ao abrir o programa", "Aplicativo não responde",
+        "Programa travado", "Erro no aplicativo", "Problema ao executar o software",
+        "Software não funciona", "Erro no sistema do programa",
+        "ERRO NO SOFTWARE", "PROGRAMA TRAVADO", "FALHA AO INICIAR O PROGRAMA"
       ],
       "responses": [
-        "Tente atualizar o software para a versão mais recente.", 
-        "Tente reinstalar o programa.", 
-        "Verifique se o seu sistema operacional atende aos requisitos mínimos do software."
+        "Verifique se o software está atualizado.",
+        "Tente reinstalar o programa para corrigir o erro.",
+        "Confirme se o sistema atende aos requisitos mínimos do programa."
+      ]
+    },
+    
+    {
+      "intent": "problema_email",
+      "patterns": [
+        "Erro ao enviar e-mail", "Não consigo acessar meu e-mail", "Problema ao receber mensagens", "E-mail travado",
+        "Erro na caixa de entrada", "Problema com servidor de e-mail", "Não consigo configurar o e-mail",
+        "E-mail não funciona", "Mensagem de erro ao enviar e-mail", "Problema com e-mail corporativo",
+        "EMAIL NÃO FUNCIONA", "PROBLEMA NO EMAIL", "ERRO AO CONFIGURAR EMAIL"
+      ],
+      "responses": [
+        "Verifique as configurações do servidor de e-mail.",
+        "Tente acessar de outro dispositivo ou navegador.",
+        "Certifique-se de que sua conexão com a internet está estável."
       ]
     },
     {
-      "intent": "erro_sistema_operacional",
+      "intent": "problema_camera_web",
       "patterns": [
-        "Erro no Windows", "Problema no sistema operacional", "Tela azul", "Falha no sistema operacional",
-        "Erro no Windows", "Problema no sistema operacional", "Tela azul", "Falha no sistema operacional",
-        "ERRO NO WINDOWS", "PROBLEMA NO SISTEMA OPERACIONAL", "TELA AZUL", "FALHA NO SISTEMA OPERACIONAL"
+        "A câmera não está funcionando", "Não consigo acessar a webcam", "Erro na câmera do notebook",
+        "Webcam não funciona", "A câmera está desconectada", "A câmera não é detectada pelo sistema",
+        "Problema ao usar a câmera", "Minha câmera não liga", "Erro ao acessar a câmera",
+        "Problema na câmera do computador", "CÂMERA NÃO FUNCIONA", "WEBCAM COM PROBLEMA"
       ],
       "responses": [
-        "Verifique se o sistema operacional está atualizado.", 
-        "Tente reiniciar o computador ou executar uma verificação de erros no disco.", 
-        "Se o erro persistir, talvez seja necessário restaurar o sistema para um ponto anterior."
+        "Certifique-se de que a câmera está ativada nas configurações do sistema.",
+        "Verifique se o driver da câmera está instalado e atualizado.",
+        "Tente desconectar e reconectar a câmera, se for externa."
       ]
     },
     {
-      "intent": "esqueci_senha",
+      "intent": "problema_audio",
       "patterns": [
-        "Esqueci minha senha", "Não consigo acessar minha conta", "Redefinir senha", "Perdi a senha",
-        "Esqueci minha senha", "Nao consigo acessar minha conta", "Redefinir senha", "Perdi a senha",
-        "ESQUECI MINHA SENHA", "NAO CONSIGO ACESSAR MINHA CONTA", "REDEFINIR SENHA", "PERDI A SENHA"
+        "O som não está funcionando", "Não consigo ouvir nada", "O áudio do meu computador está mudo",
+        "Problema com os alto-falantes", "O microfone não funciona", "Erro no áudio do sistema",
+        "Meu som está muito baixo", "Problema ao conectar fone de ouvido", "O áudio não sai pelos alto-falantes",
+        "SEM SOM NO PC", "MICROFONE NÃO FUNCIONA", "PROBLEMA NO ÁUDIO"
       ],
       "responses": [
-        "Você pode tentar recuperar sua senha através da opção 'Esqueci minha senha'.", 
-        "Se você esqueceu sua senha, entre em contato com o suporte para resetá-la.", 
-        "Tente acessar a página de recuperação de senha no site."
+        "Verifique se o volume está ativado e ajustado no sistema.",
+        "Certifique-se de que os alto-falantes ou fones de ouvido estão conectados corretamente.",
+        "Atualize os drivers de áudio para garantir compatibilidade."
       ]
     },
     {
-      "intent": "erro_atualizacao",
+      "intent": "problema_bateria",
       "patterns": [
-        "A atualização falhou", "Não consigo atualizar o software", "Erro ao tentar atualizar", "Problema na atualização",
-        "A atualizacao falhou", "Nao consigo atualizar o software", "Erro ao tentar atualizar", "Problema na atualizacao",
-        "A ATUALIZACAO FALHOU", "NAO CONSIGO ATUALIZAR O SOFTWARE", "ERRO AO TENTAR ATUALIZAR", "PROBLEMA NA ATUALIZACAO"
+        "A bateria não carrega", "O notebook desliga sozinho", "Bateria descarrega rápido",
+        "Erro na carga do notebook", "Meu laptop não carrega", "Problema com o carregador do notebook",
+        "A bateria não funciona", "O carregador não é detectado", "BATERIA NÃO CARREGA",
+        "NOTEBOOK DESLIGANDO", "PROBLEMA NA BATERIA"
       ],
       "responses": [
-        "Tente reiniciar o computador e verificar se há alguma atualização pendente.", 
-        "Verifique sua conexão com a internet e tente atualizar novamente.", 
-        "Se o erro persistir, talvez seja necessário desinstalar a atualização e tentar novamente."
+        "Certifique-se de que o carregador está conectado corretamente à tomada.",
+        "Verifique se há danos visíveis no cabo do carregador.",
+        "Considere substituir a bateria se ela estiver muito desgastada."
       ]
     },
     {
-      "intent": "problema_senha_wifi",
+      "intent": "problema_perifericos",
       "patterns": [
-        "Esqueci a senha do Wi-Fi", "Não consigo conectar ao Wi-Fi", "Senha do Wi-Fi não funciona", "Problema para conectar ao Wi-Fi",
-        "Esqueci a senha do Wi-Fi", "Nao consigo conectar ao Wi-Fi", "Senha do Wi-Fi nao funciona", "Problema para conectar ao Wi-Fi",
-        "ESQUECI A SENHA DO WI-FI", "NAO CONSIGO CONECTAR AO WI-FI", "SENHA DO WI-FI NAO FUNCIONA", "PROBLEMA PARA CONECTAR AO WI-FI"
+        "Meu teclado não funciona", "Erro ao usar o mouse", "O teclado está travado",
+        "O mouse não responde", "Não consigo usar meu periférico", "Problema com o teclado do notebook",
+        "O touchpad não funciona", "Problema ao conectar teclado ou mouse", "TECLADO TRAVADO",
+        "MOUSE NÃO FUNCIONA", "PROBLEMA COM PERIFÉRICO"
       ],
       "responses": [
-        "Verifique se você está digitando a senha corretamente.", 
-        "Tente reiniciar o roteador e verificar se a senha está correta nas configurações do roteador.", 
-        "Entre em contato com o administrador da rede para obter a senha correta."
+        "Desconecte e reconecte o periférico, se for externo.",
+        "Verifique se o driver do dispositivo está instalado corretamente.",
+        "Reinicie o computador para verificar se o problema persiste."
       ]
     },
     {
-      "intent": "problema_permissao_arquivo",
+      "intent": "limpar_cache_dns",
       "patterns": [
-        "Não tenho permissão para acessar o arquivo", "Erro de permissão", "Não consigo abrir o arquivo", "Acesso negado ao arquivo",
-        "Nao tenho permissao para acessar o arquivo", "Erro de permissao", "Nao consigo abrir o arquivo", "Acesso negado ao arquivo",
-        "NAO TENHO PERMISSAO PARA ACESSAR O ARQUIVO", "ERRO DE PERMISSAO", "NAO CONSIGO ABRIR O ARQUIVO", "ACESSO NEGADO AO ARQUIVO"
+          "O site não carrega"
       ],
       "responses": [
-        "Verifique se você tem as permissões necessárias para acessar o arquivo.", 
-        "Tente executar o programa como administrador.", 
-        "Se o problema persistir, entre em contato com o administrador do sistema."
-      ]
+          "Parece que o problema pode estar relacionado ao cache DNS. Isso pode ser resolvido limpando o cache.",
+          "Você pode tentar limpar o cache DNS para resolver o problema. Aqui está um script que pode ajudar.",
+          "Recomendo executar este script para limpar o cache DNS. Faça o download e veja se o problema persiste."
+      ],
+      "file": "limpa_cache.bat"
+    },
+    {
+      "intent": "problema_rede_local",
+      "patterns": [
+        "Sem conexão"
+      ],
+      "responses": [
+        "Verifique se os cabos da rede estão conectados."        
+      ],
+      "image": "network-image.png"
     }
+  
   ]
 }
+     
+        
+  
+

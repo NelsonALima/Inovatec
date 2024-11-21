@@ -9,6 +9,8 @@ body {
   
 }
 
+
+
 /* Barra de Menu Principal */
 .menu-bar {
   position: relative; 
@@ -346,8 +348,8 @@ body {
 }
 
 .bot-image {
-  max-width: 200px;  /* Ajuste o valor conforme necessário */
-  max-height: 200px; /* Ajuste o valor conforme necessário */
+  max-width: 300px;  /* Ajuste o valor conforme necessário */
+  max-height: 300px; /* Ajuste o valor conforme necessário */
   width: auto;       /* Mantém a proporção da imagem */
   height: auto;      /* Mantém a proporção da imagem */
 }
@@ -371,3 +373,21 @@ body {
 #send-button:hover {
   background-color: rgb(84, 122, 199); /* Muda a cor de fundo para um tom mais escuro de verde ao passar o mouse */
 }
+
+.download-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.download-button:hover {
+  background-color: #0056b3;
+}
+
