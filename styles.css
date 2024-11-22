@@ -4,9 +4,25 @@ body {
   background-color: #141313; /* Cor de fundo escura */
   background-image: url('Techbot.png'); /* Imagem de fundo */
   background-position: center 100px; /* Posiciona a imagem no centro horizontal e 100px para baixo */
-  background-size: 500px 500px; /* Define o tamanho da imagem de fundo */
+  background-size: 30%; /* Define o tamanho da imagem de fundo */
   background-repeat: no-repeat; /* Impede a repetição da imagem de fundo */
+  font-size: 16px; /* Tamanho base */
   
+}
+
+@media (max-width: 768px) {
+  body {    
+    font-size: 14px; /* Reduz o tamanho em dispositivos menores */
+    background-size: 50%; /* Reduz o tamanho da imagem em telas médias */
+    background-position: center 50px; /* Posiciona a imagem no topo */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    background-size: 70%; /* Ajusta a imagem para telas pequenas */
+    background-position: center 100px; /* Mantém centralizada */
+  }
 }
 
 
@@ -18,13 +34,28 @@ body {
   left: 0; /* Fixa a barra à esquerda */
   width: 98%; /* Barra ocupa toda a largura da página */
   background-color: #333; /* Cor de fundo da barra */
-  padding: 10px; /* Espaçamento interno */
+  padding: 10px 5px; /* Espaçamento interno */
+  flex-wrap: wrap;
   display: flex; /* Usado para distribuir os itens da barra */
   justify-content: space-between; /* Espalha os itens entre as extremidades */
   align-items: center; /* Centraliza os itens verticalmente */
   z-index: 1000; /* Garante que a barra ficará por cima de outros elementos */
   overflow-x: hidden; /* Oculta o conteúdo que ultrapassa a largura da barra */  
   border-radius: 5px;  
+}
+
+@media (max-width: 768px) {
+  .menu-bar {
+    flex-direction: column; /* Empilha os itens verticalmente */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-bar {
+    max-width: 100%; /* A imagem ocupa toda a largura disponível */
+    max-height: 40vh; /* Ajusta a altura proporcionalmente */
+  }
 }
 
 /* Botões do Menu */
@@ -36,13 +67,28 @@ body {
   font-size: 15px; /* Tamanho da fonte do botão */
   cursor: pointer; /* Mostra o cursor de mão ao passar sobre o botão */
   border-radius: 5px; /* Arredonda as bordas do botão */
-  width: 100px; /* Define uma largura fixa para o botão */
+  width: auto; /* Define uma largura fixa para o botão */
   height: 30px; /* Define uma altura fixa para o botão */  
+  padding: 10px;
 
   display: flex; /* Define flexbox */
   justify-content: center; /* Centraliza horizontalmente */
   align-items: center; /* Centraliza verticalmente */
   text-align: center; /* Garante que o texto esteja alinhado */
+}
+
+@media (max-width: 768px) {
+  .menu-btn {
+    font-size: 14px; /* Reduz o tamanho da fonte */
+    padding: 8px; /* Ajusta o padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-btn {
+    max-width: 30%; /* A imagem ocupa toda a largura disponível */
+    max-height: 40vh; /* Ajusta a altura proporcionalmente */
+  }
 }
 
 /* Efeito de hover (passar o mouse sobre o botão) */
@@ -60,9 +106,24 @@ body {
   border-radius: 5px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  max-height: 200px; /* Limita a altura do submenu */
+  max-height: 90%; /* Limita a altura do submenu */
   overflow-y: auto; /* Barra de rolagem se o conteúdo exceder a altura */
-  width: 150px; /* Define uma largura para o submenu */
+  width: auto; /* Define uma largura para o submenu */
+}
+
+@media (max-width: 768px) {
+  .submenu {
+    width: 90%;
+    top: auto; /* Remove o posicionamento fixo */
+    position: relative; /* Faz o submenu seguir o fluxo do layout */
+  }
+}
+
+@media (max-width: 480px) {
+  .submenu {
+    top: auto; /* Remove o posicionamento fixo */
+    position: relative; /* Faz o submenu seguir o fluxo do layout */
+  }
 }
 
 .submenu ul {
@@ -105,8 +166,10 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
+
+  width: 90%;
   max-width: 500px;
+
   background-color: #fff;
   padding: 20px;
   border: 1px solid #ddd; /* Borda simples */
@@ -115,6 +178,23 @@ body {
   z-index: 1000; /* Garantir que fique sobre outros elementos */
   overflow-y: auto; /* Permite rolagem caso haja muitas mensagens */
 }
+
+.chat-input textarea {
+  width: 80%; /* Ajusta largura da área de texto */
+}
+
+@media (max-width: 768px) {
+  .chat-input textarea {
+    height: 40px; /* Reduz a altura da área de digitação */
+  }
+
+  #send-button {
+    width: auto; /* Permite largura variável */
+    font-size: 14px; /* Reduz tamanho do texto */
+  }
+}
+
+
 
 /* Título do histórico */
 #history-screen h2 {
@@ -160,13 +240,13 @@ body {
 
 /* Barra de Idiomas (sempre visível) */
 .language-bar {
-  display: flex; /* Disposição dos itens na barra de idiomas */
-  gap: 10px; /* Espaço entre os itens */
-  margin-left: 20px; /* Margem à esquerda */
-  position: absolute; /* Fixa a posição da barra */
-  left: 1350px; /* Coloca a barra 1400px à esquerda */
-  max-width: 100vw; /* Limita a largura à largura da tela */
-  overflow-x: auto; /* Permite rolagem horizontal se houver muitos itens */
+  display: flex; /* Disposição dos itens em linha */
+  gap: 10px; /* Espaço entre as bandeiras */
+  margin-left: auto; /* Empurra a barra de idiomas para o final */
+  max-width: 100%; /* Garante que ela não ultrapasse a largura do contêiner */
+  overflow-x: auto; /* Adiciona rolagem horizontal, se necessário */
+  flex-wrap: wrap; /* Permite quebra de linha */
+  justify-content: center; /* Centraliza os itens em telas pequenas */
 }
 
 /* Imagem das bandeiras na barra de idiomas */
@@ -176,6 +256,36 @@ body {
   border-radius: 5px; /* Bordas arredondadas das imagens */
 }
 
+@media (max-width: 768px) {
+  .language-bar img {
+    width: 20px; /* Reduz o tamanho das bandeiras */
+  }
+  .menu-bar {
+    flex-direction: column; /* Empilha itens verticalmente */
+    align-items: center; /* Alinha à esquerda */
+  }
+
+  .language-bar {
+    margin-left: 0; /* Remove margem automática */
+    margin-top: 10px; /* Adiciona espaçamento entre as seções */
+  }
+
+  .menu-btn {
+    width: 80%; /* Ajusta a largura dos botões para caber melhor */
+  }
+}
+
+.language-bar img {
+  width: 20px; /* Tamanho padrão */
+}
+
+@media (max-width: 768px) {
+  .language-bar img {
+    width: 15px; /* Reduz tamanho em telas menores */
+  }
+}
+
+
 /* Ícone do Chat */
 .chat-icon {
   position: fixed; /* Fixa o ícone do chat na tela */
@@ -183,8 +293,11 @@ body {
   right: 70px; /* Distância da borda direita da tela */
   transform: translateX(0); /* Mantém o ícone no mesmo lugar horizontalmente */
   cursor: pointer; /* Mostra o cursor de mão ao passar sobre o ícone */
+
   width: 70px; /* Largura do ícone */
   height: 70px; /* Altura do ícone */
+  bottom: 100px;
+
   background-color: #171717; /* Cor de fundo do ícone */
   border-radius: 50%; /* Torna o ícone redondo */
   display: flex; /* Flexbox para centralizar o conteúdo */
@@ -227,8 +340,10 @@ body {
   bottom: 20px; /* Distância do fundo da tela */
   left: 50%; /* Centraliza horizontalmente */
   transform: translateX(-50%); /* Ajusta a posição para centralizar exatamente */
-  width: 700px; /* Largura da janela */
-  height: 500px; /* Altura da janela */
+
+  width: 50%; /* Largura da janela */
+  height: 70%; /* Altura da janela */
+
   background-color: #fff;  /* Cor de fundo da janela */
   border-radius: 10px; /* Bordas arredondadas */
   display: none; /* Inicialmente a janela do chat é escondida */
@@ -236,6 +351,14 @@ body {
   flex-direction: column; /* Organiza o conteúdo dentro da janela */
   justify-content: space-between; /* Espaça os elementos dentro da janela */
   opacity: 0.9; /* Define a transparência da janela */  
+}
+
+@media (max-width: 768px) {
+  .chat-window {
+    width: 80%;
+    height: 50%;
+    bottom: 0;
+  }
 }
 
 /* Cabeçalho da janela do chat */
@@ -250,6 +373,8 @@ body {
   border-top-left-radius: 10px; /* Arredonda o canto superior esquerdo */
   border-top-right-radius: 10px; /* Arredonda o canto superior direito */
 }
+
+
 
 /* Lado esquerdo do cabeçalho (ícone e nome do chatbot) */
 .chat-header-left {
@@ -268,7 +393,7 @@ body {
 /* Nome do chatbot */
 #chatbot-name {
   font-size: 18px; /* Tamanho da fonte */
-  margin-left: 10px; /* Espaço à esquerda do nome */
+  margin-left: 30%; /* Espaço à esquerda do nome */
 }
 
 /* Botão para minimizar a janela do chat */
@@ -282,7 +407,42 @@ body {
   border-radius: 5px; /* Arredonda as bordas do botão */
   width: 40px; /* Largura fixa */
   height: 30px; /* Altura fixa */
+  margin-left: 30%; /* Espaçamento entre os botões */
+  margin-right: 1%;
 }
+
+/* Botão para fechar a janela do chat */
+.close-btn {
+  background-color: transparent; /* Fundo transparente */
+  border: 2px solid #ffffff; /* Borda branca */
+  color: white; /* Cor do texto */
+  font-size: 16px; /* Tamanho da fonte */
+  cursor: pointer; /* Cursor de mão ao passar sobre o botão */
+  padding: 3px 6px; /* Espaçamento interno */
+  border-radius: 5px; /* Arredonda as bordas do botão */
+  width: 40px; /* Largura fixa */
+  height: 30px; /* Altura fixa */
+  margin-left: 2%; /* Espaçamento entre os botões */
+}
+
+@media (max-width: 768px) {  
+  .minimize-btn {
+    margin-left: 10%; /* Espaçamento entre os botões */
+  }
+
+  #close-btn {
+    width: 35px; /* Ajusta a largura para telas menores */
+    height: 25px; /* Ajusta a altura para telas menores */
+    font-size: 14px; /* Ajusta o tamanho da fonte */    
+  }
+}
+
+.close-btn:hover {
+  background-color: red; /* Cor de fundo ao passar o mouse */
+  color: white; /* Cor do texto */
+}
+
+
 
 /* Área das mensagens do chat */
 .chat-messages {
@@ -348,10 +508,32 @@ body {
 }
 
 .bot-image {
-  max-width: 300px;  /* Ajuste o valor conforme necessário */
-  max-height: 300px; /* Ajuste o valor conforme necessário */
-  width: auto;       /* Mantém a proporção da imagem */
-  height: auto;      /* Mantém a proporção da imagem */
+  max-width: 90%; /* A imagem ocupa no máximo 90% da largura do contêiner */
+  max-height: 90vh; /* A imagem ocupa no máximo 90% da altura da viewport */
+  width: auto; /* Mantém a proporção */
+  height: auto; /* Mantém a proporção */
+  margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+@media (max-width: 768px) {
+  .bot-image {
+    max-width: 70%; /* Reduz a largura máxima para 70% da tela */
+    max-height: 50vh; /* Reduz a altura máxima para 50% da altura da viewport */
+  }
+}
+
+@media (max-width: 480px) {
+  .bot-image {
+    max-width: 100%; /* A imagem ocupa toda a largura disponível */
+    max-height: 40vh; /* Ajusta a altura proporcionalmente */
+  }
+}
+
+@media (max-width: 786px) {
+  .user-message,
+  .bot-message {
+    max-width: 80%; /* Ocupa toda a largura disponível */
+  }
 }
 
 

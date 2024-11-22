@@ -182,6 +182,7 @@
         "Reinicie o computador para verificar se o problema persiste."
       ]
     },
+    
     {
       "intent": "limpar_cache_dns",
       "patterns": [
@@ -194,6 +195,7 @@
       ],
       "file": "limpa_cache.bat"
     },
+
     {
       "intent": "problema_rede_local",
       "patterns": [

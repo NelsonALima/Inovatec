@@ -44,6 +44,20 @@ function minimizeChat() {
   chatIcon.style.display = "flex"; // Mostra o ícone novamente
 }
 
+// Função para fechar o chat e limpar mensagens
+function closeChat() {
+    const chatWindow = document.getElementById('chat-window');
+    const chatMessages = document.getElementById('chat-messages');
+    const chatIcon = document.getElementById('chat-icon');
+  
+    // Limpa as mensagens
+    chatMessages.innerHTML = "";
+  
+    // Esconde a janela do chat e mostra o ícone
+    chatWindow.style.display = "none";
+    chatIcon.style.display = "flex"; // Mostra o ícone novamente
+  }
+
 // Função para mudar o idioma e carregar o JSON correspondente
 function changeLanguage(language) {
     const languages = {
