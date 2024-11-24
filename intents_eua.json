@@ -175,6 +175,33 @@
 ]
 },
 {
+  "intent": "remote_access_problem",
+  "patterns": [
+    "I can't access the remote desktop", "Remote access is not working", "I can't connect to the remote server",
+    "Problem trying to access my computer remotely", "Error opening the remote session"
+  ],
+  "responses": [
+    "Make sure the remote computer is powered on and connected to the network",
+    "Check if the remote access settings are enabled",
+    "Ensure the firewall or antivirus is not blocking the connection"
+  ]
+},
+{
+  "intent": "data_backup_problem",
+  "patterns": [
+    "How do I set up an automatic backup?", "My backup was not completed", "I lost my data, how can I recover it?",
+    "I can't save files to the backup", "The backup is corrupted"
+  ],
+  "responses": [
+    "Check if there is enough space on the backup destination",
+    "Make sure the backup software is configured correctly",
+    "Try restoring a previous backup copy, if available"
+  ]
+},
+
+
+
+{
 "intent": "clear_dns_cache",
 "patterns": [
 "Website not loading"

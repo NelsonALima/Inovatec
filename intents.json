@@ -182,6 +182,33 @@
         "Reinicie o computador para verificar se o problema persiste."
       ]
     },
+
+    {
+      "intent": "problema_acesso_remotos",
+      "patterns": [
+        "Não consigo acessar o desktop remoto", "O acesso remoto não funciona", "Não consigo me conectar ao servidor remoto",
+        "Problema ao tentar acessar meu computador remotamente", "Erro ao abrir a sessão remota"
+      ],
+      "responses": [
+        "Certifique-se de que o computador remoto está ligado e conectado à rede",
+        "Verifique se as configurações do acesso remoto estão ativadas",
+        "Confirme se o firewall ou antivírus não está bloqueando a conexão"
+      ]
+    },
+
+    {
+      "intent": "problema_backup_dados",
+      "patterns": [
+        "Como faço para configurar um backup automático?", "Meu backup não foi concluído", "Perdi meus dados, como recuperar?",
+        "Não consigo salvar arquivos no backup", "O backup está corrompido"
+      ],
+      "responses": [
+        "Verifique se há espaço suficiente no destino do backup",
+        "Certifique-se de que o software de backup está configurado corretamente",
+        "Tente restaurar uma cópia anterior do backup, se disponível"
+      ]
+    },
+
     
     {
       "intent": "limpar_cache_dns",

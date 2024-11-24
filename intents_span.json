@@ -183,6 +183,32 @@
         ]
       },
       {
+        "intent": "problema_acceso_remoto",
+        "patterns": [
+          "No puedo acceder al escritorio remoto", "El acceso remoto no funciona", "No puedo conectarme al servidor remoto",
+          "Problema al intentar acceder a mi computadora de forma remota", "Error al abrir la sesión remota"
+        ],
+        "responses": [
+          "Asegúrese de que la computadora remota esté encendida y conectada a la red",
+          "Verifique que la configuración de acceso remoto esté habilitada",
+          "Confirme que el firewall o el antivirus no estén bloqueando la conexión"
+        ]
+      },
+      {
+        "intent": "problema_respaldo_datos",
+        "patterns": [
+          "¿Cómo configuro un respaldo automático?", "Mi respaldo no se completó", "Perdí mis datos, ¿cómo los recupero?",
+          "No puedo guardar archivos en el respaldo", "El respaldo está corrupto"
+        ],
+        "responses": [
+          "Verifique si hay suficiente espacio en el destino del respaldo",
+          "Asegúrese de que el software de respaldo esté configurado correctamente",
+          "Intente restaurar una copia anterior del respaldo, si está disponible"
+        ]
+      },
+      
+
+      {
         "intent": "limpar_cache_dns",
         "patterns": [
             "El sitio no carga"
